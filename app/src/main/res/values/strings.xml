@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kinny 听</string>
+    <string name="playlist_title">Kinny 听</string>
+    <string name="empty_playlist">暂无歌曲，点击下方按钮导入本地音乐</string>
+    <string name="import_files">导入文件</string>
+    <string name="import_folder">导入文件夹</string>
+    <string name="import_folder_prompt">请选择包含 MP3 文件的手机目录</string>
+    <string name="import_folder_hint">点击「导入文件夹」，在系统文件管理器中选择手机内部存储中的音乐目录（如 Music、Download 等）</string>
+    <string name="now_playing">正在播放</string>
+    <string name="back">返回</string>
+    <string name="permission_required">需要存储权限才能读取本地音乐文件</string>
+    <string name="grant_permission">授予权限</string>
+    <string name="remove_song">移除</string>
+    <string name="play">播放</string>
+    <string name="pause">暂停</string>
+    <string name="skip_next">下一首</string>
+    <string name="skip_previous">上一首</string>
+    <string name="unknown_artist">未知艺术家</string>
+    <string name="import_success">已导入 %1$d 首歌曲</string>
+    <string name="import_failed">导入失败，请重试</string>
+    <string name="notification_channel_name">Kinny 听 · 正在播放</string>
+    <string name="notification_channel_desc">显示当前播放的歌曲信息</string>
+    <string name="no_lyrics">暂无歌词</string>
+    <string name="drag_to_reorder">长按条目拖动以调整顺序</string>
+    <string name="lyrics_source_lrc">来自同目录 LRC 文件</string>
+    <string name="lyrics_source_id3">来自 MP3 内嵌歌词</string>
+</resources>

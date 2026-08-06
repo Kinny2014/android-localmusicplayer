@@ -1,0 +1,19 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.jks
+*.keystore
+
+# Android / Gradle (module build outputs)
+**/build/
+.kotlin/
+
+# IDE (all modules)
+.idea/
