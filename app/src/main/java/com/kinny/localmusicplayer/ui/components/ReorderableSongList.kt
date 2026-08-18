@@ -1,9 +1,11 @@
 package com.kinny.localmusicplayer.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -49,28 +51,41 @@ fun ReorderableSongList(
         onMoveSong(from.index, to.index)
     }
 
-    LazyColumn(
-        state = lazyListState,
-        modifier = modifier,
-        contentPadding = PaddingValues(vertical = 8.dp),
-    ) {
-        items(
-            items = songs,
-            key = { it.id },
-        ) { song ->
-            ReorderableItem(
-                state = reorderableState,
-                key = song.id,
-            ) { isDragging ->
-                ReorderableSongRow(
-                    song = song,
-                    isPlaying = song.id == currentSongId,
-                    isDragging = isDragging,
-                    onClick = { onPlaySong(song) },
-                    onRemove = { onRemoveSong(song.id) },
-                )
+    Box(modifier = modifier) {
+        LazyColumn(
+            state = lazyListState,
+            modifier = Modifier.fillMaxWidth(),
+            contentPadding = PaddingValues(
+                top = 8.dp,
+                bottom = 8.dp,
+                end = 10.dp,
+            ),
+        ) {
+            items(
+                items = songs,
+                key = { it.id },
+            ) { song ->
+                ReorderableItem(
+                    state = reorderableState,
+                    key = song.id,
+                ) { isDragging ->
+                    ReorderableSongRow(
+                        song = song,
+                        isPlaying = song.id == currentSongId,
+                        isDragging = isDragging,
+                        onClick = { onPlaySong(song) },
+                        onRemove = { onRemoveSong(song.id) },
+                    )
+                }
             }
         }
+
+        LazyListScrollIndicator(
+            listState = lazyListState,
+            modifier = Modifier
+                .align(Alignment.CenterEnd)
+                .fillMaxHeight(),
+        )
     }
 }
 
